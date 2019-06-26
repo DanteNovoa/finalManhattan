@@ -66,6 +66,22 @@ export class HeroesService {
         return this.heroes[idx]
     }
 
+    buscarComponentes(param: string):Heroe[]{
+        let componentArr:Heroe[]=[];
+        param = param.toLowerCase();
+
+        for (let heroe of this.heroes) {
+            let name = heroe.nombre.toLowerCase();
+
+            if (name.indexOf(param) >= 0) {
+               componentArr.push(heroe) 
+            }
+        }
+
+        return componentArr;
+
+
+    }
 
 }
 
